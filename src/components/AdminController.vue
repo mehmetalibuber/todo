@@ -6,9 +6,7 @@
       <span v-else>Hatası</span>
     </div>
     <div>
-      <button class="btn btn-warning mt-1" @click="signOut">
-        Sistemden Çıkış Yap
-      </button>
+      <button class="btn btn-warning mt-1" @click="signOut">Çıkış Yap</button>
     </div>
   </div>
 </template>

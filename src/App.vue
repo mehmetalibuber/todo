@@ -1,7 +1,9 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Anasayfa</router-link> |
+    <router-link to="/sign-in">Giriş Yap</router-link> |
+    <router-link to="/sign-up">Üye OL</router-link> |
+    <a>Çıkış Yap</a>
   </nav>
   <router-view />
 </template>
