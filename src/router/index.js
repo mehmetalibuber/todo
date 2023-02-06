@@ -3,9 +3,7 @@ import VueRouter from "vue-router";
 import firebase from "../firebase/firebase";
 import Login from "../views/Login.vue";
 import Admin from "../views/Admin/Admin.vue";
-import Blog from "../views/Blog.vue";
 import Home from "../views/Home.vue";
-import BlogDetail from "../views/BlogDetail.vue";
 import BlogAdmin from "../views/Admin/blogAdmin.vue";
 
 Vue.use(VueRouter);
@@ -39,16 +37,6 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
-  },
-  {
-    path: "/blog",
-    name: "Blog",
-    component: Blog,
-  },
-  {
-    path: "/-:blogId",
-    name: "BlogDetail",
-    component: BlogDetail,
   },
 ];
 const router = new VueRouter({

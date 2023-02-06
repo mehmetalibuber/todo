@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
 import axios from "axios";
-import router from "./Router/index";
+import router from "./router/index";
 import firebase from "./firebase/firebase";
 import VueEditor from "vue2-editor";
 
