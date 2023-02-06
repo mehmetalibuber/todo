@@ -1,0 +1,1 @@
+export const getBlog = (state) => state.Blog;
