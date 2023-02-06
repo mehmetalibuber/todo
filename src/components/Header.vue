@@ -4,7 +4,7 @@
       <nav class="nav">
         <div class="logo">
           <router-link to="/" class="logoH1"
-            >mehmetalibuber.com<span style="color: #b8d610">(</span
+            >todo<span style="color: #b8d610">(</span
             ><span style="color: #b8d610">)</span></router-link
           >
         </div>
