@@ -39,7 +39,7 @@
 
 <script>
 import firebase from "../firebase/firebase";
-import router from "../Router/index";
+import router from "../router/index";
 export default {
   data() {
     return {

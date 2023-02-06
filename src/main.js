@@ -6,8 +6,6 @@ import router from "./router/index";
 import firebase from "./firebase/firebase";
 import VueEditor from "vue2-editor";
 
-// Using ScrollReveal's default configuration
-Vue.use(VueScrollReveal);
 Vue.use(VueEditor);
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
