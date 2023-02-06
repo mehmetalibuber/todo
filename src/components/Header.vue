@@ -16,26 +16,6 @@
           <li>
             <router-link to="/" tag="a" active-class="active">Home</router-link>
           </li>
-          <li>
-            <router-link to="/about-me" tag="a" active-class="active"
-              >About Me</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/portfolio" tag="a" active-class="active"
-              >Portfolio</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/workspace" tag="a" active-class="active"
-              >Workspace</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/contact" tag="a" active-class="active"
-              >Contact</router-link
-            >
-          </li>
         </ul>
       </nav>
     </header>
