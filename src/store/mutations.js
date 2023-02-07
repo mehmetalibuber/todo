@@ -1,3 +1,4 @@
-export const userMutation = (state, userInfos) => {
-    state.userInfos = userInfos;
+export const userMutation = (state, userInfos1) => {
+    state.userInfos = userInfos1;
+    console.log(userInfos1);
 }

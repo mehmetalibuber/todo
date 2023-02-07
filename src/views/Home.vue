@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       uid: "",
-      userInfo: [],
+      userInfos: {},
     };
   },
   async created() {
@@ -25,8 +25,11 @@ export default {
       this.$store.state.userUid = this.uid;
       await this.$store.dispatch("GET_USER_DATA", uid);
     });
-    this.userInfo = this.$store.getters.getUserInfo;
-    console.log(this.userInfo);
+    let d = await this.$store.getters.getUserInfo;
+    this.userInfos = d;
+    console.log(this.userInfos + "user infos");
+
+    console.log(this.$store.getters.getUserInfo);
   },
   methods: {},
 };

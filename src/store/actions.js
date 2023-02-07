@@ -19,8 +19,9 @@ export const GET_USER_DATA = async (context) => {
         comingUsersData.push(doc.data())
       });
       context.commit('userMutation', comingUsersData)
+      console.log(comingUsersData);
     })
     .catch((err) => {
-      alert("getKeywordsData" + err);
+      alert("comingUsersData" + err);
     });
 }
