@@ -1,1 +1,1 @@
-export const getBlog = (state) => state.Blog;
+export const getUserInfo = (state) => state.userInfos;

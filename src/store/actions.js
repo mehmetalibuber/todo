@@ -9,3 +9,18 @@ export const ADD_USER = async (context, payload) => {
     .doc(payload.uid)
     .set(payload)
 }
+export const GET_USER_DATA = async (context) => {
+  const comingUsersData = [];
+  await db
+    .collection("Users")
+    .get()
+    .then((result) => {
+      result.forEach((doc) => {
+        comingUsersData.push(doc.data())
+      });
+      context.commit('userMutation', comingUsersData)
+    })
+    .catch((err) => {
+      alert("getKeywordsData" + err);
+    });
+}

@@ -1,4 +1,4 @@
 export default {
-    userUid: null,
-    Blog: []
+    userUid: "",
+    userInfos: [],
 }
