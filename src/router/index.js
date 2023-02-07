@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import firebase from "../firebase/firebase";
 import SignUp from "../views/SignUp.vue";
+import SignIn from "../views/SignIn.vue";
 import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
@@ -18,6 +19,10 @@ const routes = [{
     path: "/sign-up",
     name: "SignUp",
     component: SignUp,
+  }, {
+    path: "/sign-in",
+    name: "SignIn",
+    component: SignIn,
   },
 ];
 const router = new VueRouter({
@@ -37,7 +42,7 @@ router.beforeEach((to, from, next) => {
   const data = firebase.firebase;
   const user = data.auth().currentUser;
   if (requiresAuth && !user) {
-    next("/sign-up");
+    next("/sign-in");
   } else {
     next();
   }

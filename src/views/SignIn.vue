@@ -1,14 +1,6 @@
 <template>
   <div class="container text-center text-dark pt-5 mt-5 bg-primary">
     <form class="loginForm text-center container col-md-6 mt-5 pt-5">
-      <div class="login mt-3">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Ad - Soyad"
-          v-model="name"
-        />
-      </div>
       <div class="login mt-2">
         <input
           class="form-control"
@@ -26,14 +18,19 @@
         />
       </div>
     </form>
+
     <div class="d-flex justify-content-center">
-      <button @click="SIGN_UP" class="btn btn-danger my-5 mx-2" type="submit">
-        <i class="fas fa-user"></i>
-        Üye Ol
-      </button>
-      <button @click="GO_SIGN_IN" class="btn btn-success my-5 mx-2">
+      <button @click="SIGN_IN" class="btn btn-danger my-5 mx-2">
         <i class="fas fa-sign-in-alt"></i>
         Giriş Yap
+      </button>
+      <button
+        @click="GO_SIGN_UP"
+        class="btn btn-warning my-5 mx-2"
+        type="submit"
+      >
+        <i class="fas fa-user"></i>
+        Üye Ol
       </button>
     </div>
   </div>
@@ -52,7 +49,7 @@ export default {
     };
   },
   methods: {
-    async SIGN_UP() {
+    async SIGN_IN() {
       if (this.email == "" || this.password == "" || this.name == "") {
         this.showAlert("danger", "Fill The Blanks");
       } else {
@@ -60,15 +57,15 @@ export default {
           var data = firebase.firebase;
           await data
             .auth()
-            .createUserWithEmailAndPassword(this.email, this.password);
+            .signInWithEmailAndPassword(this.email, this.password);
           router.replace({ name: "Home" });
         } catch (err) {
-          this.showAlert("danger", "ERROR ON THE SIGN-UP");
+          this.showAlert("danger", "ERROR ON THE SIGN-IN");
         }
       }
     },
-    GO_SIGN_IN() {
-      router.replace({ name: "SignIn" });
+    GO_SIGN_UP() {
+      router.replace({ name: "SignUp" });
     },
     showAlert(value, message) {
       const form = document.querySelector("form");

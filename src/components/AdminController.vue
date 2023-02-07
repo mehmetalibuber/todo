@@ -1,8 +1,7 @@
 <template>
-  <div class="text-center">
-    Logged in
-    <span class="text-danger" v-if="loggedIn"> Yes </span>
-    <span v-else>No</span>
+  <div class="text-center text-dark">
+    <span class="text-danger" v-if="loggedIn"> Giriş Yapıldı </span>
+    <span v-else>Giriş Yapılmadı</span>
     <div>
       <button class="btn btn-warning mt-1" @click="signOut">Sign Out</button>
     </div>
