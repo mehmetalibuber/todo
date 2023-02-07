@@ -57,10 +57,22 @@ export default {
         this.showAlert("danger", "Fill The Blanks");
       } else {
         try {
-          var data = firebase.firebase;
-          await data
+          var user = firebase.firebase;
+          await user
             .auth()
             .createUserWithEmailAndPassword(this.email, this.password);
+          // get user uid data
+          user.auth().onAuthStateChanged(async (user) => {
+            let uid = user.uid;
+            this.$store.state.userUid = uid;
+
+            let userData = {
+              uid: uid,
+              email: this.email,
+              name: this.name,
+            };
+            await this.$store.dispatch("ADD_USER", userData);
+          });
           router.replace({ name: "Home" });
         } catch (err) {
           this.showAlert("danger", "ERROR ON THE SIGN-UP");

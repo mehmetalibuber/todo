@@ -2,19 +2,10 @@ import firebase from '../firebase/firebase'
 let db = firebase.db;
 
 // GET BLOG DATA FROM FİRESTORE //
-export const getBlogData = async (context) => {
-  const blogData = [];
+export const ADD_USER = async (context, payload) => {
+  console.log(payload);
   await db
-    .collection("Blog")
-    .get()
-    .then((result) => {
-      result.forEach((doc) => {
-        blogData.push(doc.data())
-      });
-      context.commit('blogMutation', blogData)
-    })
-    .catch((err) => {
-      alert("getBlogData" + err);
-    });
+    .collection("Users")
+    .doc(payload.uid)
+    .set(payload)
 }
-
