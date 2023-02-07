@@ -1,15 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import firebase from "../firebase/firebase";
-import Login from "../views/Login.vue";
-import Admin from "../views/Admin/Admin.vue";
+import SignUp from "../views/SignUp.vue";
 import Home from "../views/Home.vue";
-import BlogAdmin from "../views/Admin/blogAdmin.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "Home",
     component: Home,
@@ -18,25 +15,9 @@ const routes = [
     },
   },
   {
-    path: "/login",
-    name: "Login",
-    component: Login,
-  },
-  {
-    path: "/admin",
-    name: "Admin",
-    component: Admin,
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/blogAdmin",
-    name: "blogAdmin",
-    component: BlogAdmin,
-    meta: {
-      requiresAuth: true,
-    },
+    path: "/sign-up",
+    name: "SignUp",
+    component: SignUp,
   },
 ];
 const router = new VueRouter({
@@ -46,7 +27,8 @@ const router = new VueRouter({
       y: 0,
     };
   },
-  mode: "hash",
+  mode: "history",
+  // mode:"hash"
   base: process.env.BASE_URL,
   routes,
 });
