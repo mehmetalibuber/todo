@@ -28,7 +28,7 @@ const router = new VueRouter({
     };
   },
   mode: "history",
-  // mode:"hash"
+  // mode:"hash",
   base: process.env.BASE_URL,
   routes,
 });
@@ -37,7 +37,7 @@ router.beforeEach((to, from, next) => {
   const data = firebase.firebase;
   const user = data.auth().currentUser;
   if (requiresAuth && !user) {
-    next("/login");
+    next("/sign-up");
   } else {
     next();
   }

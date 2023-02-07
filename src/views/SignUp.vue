@@ -1,8 +1,8 @@
 <template>
-  <div class="container text-center">
+  <div class="container text-center text-dark pt-5 mt-5 bg-primary">
     <form
       @submit.prevent="SIGN_UP"
-      class="loginForm text-center container col-md-6"
+      class="loginForm text-center container col-md-6 mt-5 pt-5"
     >
       <div class="login mt-3">
         <input
@@ -31,7 +31,7 @@
 
       <button class="btn btn-danger mt-3 mb-5 loginbtn" type="submit">
         <i class="fas fa-sign-in-alt"></i>
-        Login
+        Üye Ol
       </button>
     </form>
   </div>
@@ -61,12 +61,8 @@ export default {
             .createUserWithEmailAndPassword(this.email, this.password);
           router.replace({ name: "Home" });
         } catch (err) {
-          this.showAlert(
-            "danger",
-            "There is no user record corresponding to this identifier"
-          );
+          this.showAlert("danger", "ERROR ON THE SIGN-UP");
         }
-        this.showAlert("danger", "Security Key Error");
       }
     },
     showAlert(value, message) {

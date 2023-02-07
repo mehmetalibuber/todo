@@ -1,10 +1,8 @@
 <template>
-  <div id="app">
-    <div class="page-wrapper">
+  <div id="app bg-warning">
       <Header />
       <router-view />
       <Footer />
-    </div>
   </div>
 </template>
  
@@ -24,4 +22,8 @@ export default {
 </script>
 
 <style>
+#app {
+  padding: 0;
+  margin: 0;
+}
 </style>

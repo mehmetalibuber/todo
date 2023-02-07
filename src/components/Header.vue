@@ -1,22 +1,19 @@
 <template>
-  <div>
-    <header class="header">
+  <div class="container-fluid">
+    <div class="logo">
+      <router-link to="/" class="">ULTOF Online To Do</router-link>
+    </div>
+    <header class="header d-flex justify-content-center">
       <nav class="nav">
-        <div class="logo">
-          <router-link to="/" class="logoH1"
-            >ULTOF Online To Do<span style="color: #b8d610">(</span
-            ><span style="color: #b8d610">)</span></router-link
-          >
+        <div>
+          <ul>
+            <li>
+              <router-link to="/" tag="a" active-class="active"
+                >Home</router-link
+              >
+            </li>
+          </ul>
         </div>
-        <input type="checkbox" id="click" />
-        <label for="click" class="menu-btn">
-          <i class="bi bi-phone"></i>
-        </label>
-        <ul>
-          <li>
-            <router-link to="/" tag="a" active-class="active">Home</router-link>
-          </li>
-        </ul>
       </nav>
     </header>
   </div>

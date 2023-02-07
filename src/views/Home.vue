@@ -1,10 +1,15 @@
 <template>
-  <div class="general"></div>
+  <div class="container">
+    <AdminController />
+    </div>
 </template>
 <script>
+import AdminController from "@/components/AdminController.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    AdminController,
+  },
   created() {},
   methods: {},
 };
