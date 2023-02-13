@@ -1,5 +1,9 @@
 export default {
     userUid: "",
-    userInfos: [],
+    userInfos: {
+        email: null,
+        name: null,
+        uid: null
+    },
 
 }

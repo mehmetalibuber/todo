@@ -1,6 +1,1 @@
-export const getUserInfo = (state) => {
-    console.log(state);
-    state.userInfos;
-console.log(state.userInfos);
-
-} 
+export const getUserInfo = (state) => state.userInfos

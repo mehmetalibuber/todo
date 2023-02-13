@@ -10,16 +10,14 @@ export const ADD_USER = async (context, payload) => {
     .set(payload)
 }
 export const GET_USER_DATA = async (context) => {
-  const comingUsersData = [];
   await db
     .collection("Users")
+    .doc(context.state.userUid)
     .get()
     .then((result) => {
-      result.forEach((doc) => {
-        comingUsersData.push(doc.data())
-      });
-      context.commit('userMutation', comingUsersData)
-      console.log(comingUsersData);
+      let data = result.data()
+      context.commit('userMutation', data)
+      console.log(data);
     })
     .catch((err) => {
       alert("comingUsersData" + err);
