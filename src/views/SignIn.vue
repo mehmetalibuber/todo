@@ -44,13 +44,12 @@ export default {
     return {
       email: "",
       password: "",
-      name: "",
       error: "",
     };
   },
   methods: {
     async SIGN_IN() {
-      if (this.email == "" || this.password == "" || this.name == "") {
+      if (this.email == "" || this.password == "") {
         this.showAlert("danger", "Fill The Blanks");
       } else {
         try {
