@@ -57,12 +57,13 @@ export default {
           await data
             .auth()
             .signInWithEmailAndPassword(this.email, this.password);
+          //await this.$store.dispatch("GET_USER_DATA");
           router.replace({ name: "Home" });
         } catch (err) {
           this.showAlert("danger", "ERROR ON THE SIGN-IN");
         }
       }
-    },
+    },   
     GO_SIGN_UP() {
       router.replace({ name: "SignUp" });
     },
