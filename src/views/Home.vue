@@ -1,6 +1,19 @@
 <template>
   <div class="container">
     <AdminController />
+    <section>
+      <div class="row">
+        <div class="col">
+          <div><strong> Kullanıcı Bilgileri </strong></div>
+          <div class="m-0">
+            <p class="m-0">isim: {{ userData.name }}</p>
+          </div>
+          <div class="m-0">
+            <p class="m-0">email: {{ userData.email }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -31,6 +44,7 @@ export default {
     async VERI_CEK() {
       setTimeout(async () => {
         let data = await this.$store.getters.getUserInfo;
+        this.userData = data;
         console.log(data);
       }, 3000);
     },
