@@ -31,17 +31,13 @@ export const ADD_TODO = async (context, payload) => {
     .update(ekle)
 }
 export const GET_USER_TODOS = async (context) => {
-  console.log("todos data buradab ")
-
   await db
     .collection("Todos")
     .doc(context.state.userUid)
     .get()
     .then((result) => {
       let data = result.data()
-      console.log("todos data buradab " + Object.keys(data));
       context.commit('userTodosMutation', data)
-
     })
     .catch((err) => {
       alert("comingUserTodosData" + err);

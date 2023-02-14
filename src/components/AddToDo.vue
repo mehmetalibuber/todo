@@ -24,9 +24,6 @@ export default {
     };
   },
   methods: {
-    getTodos() {
-      this.$store.getters.getUserTodos;
-    },
     async SEND_TODO() {
       let todo = this.todo;
       if (todo == "") {
@@ -38,7 +35,8 @@ export default {
           done: false,
           todoId,
         };
-        this.$store.dispatch("ADD_TODO", todoData);
+        await this.$store.dispatch("ADD_TODO", todoData);
+        await this.$store.dispatch("GET_USER_TODOS");
       }
     },
   },

@@ -17,12 +17,18 @@ export default {
   data() {
     return { Todos: {} };
   },
+
+  mounted() {
+    setTimeout(() => {
+      this.Todos = this.$store.getters.getUserTodos;
+    }, 1000);
+  },
   async created() {
-    // await this.$store.dispatch("GET_USER_TODOS");
+    await this.$store.dispatch("GET_USER_TODOS");
     setTimeout(async () => {
       this.Todos = this.$store.getters.getUserTodos;
       console.log(this.Todos);
-    }, 6000);
+    }, 1000);
   },
 };
 </script>
@@ -32,7 +38,7 @@ p {
   padding: 5px 10px;
   margin: 0 5px;
   background-color: antiquewhite;
-  width: min-content;
+  width: max-content;
   border-radius: 4px;
 }
 .todoList {
