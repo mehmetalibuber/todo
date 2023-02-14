@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer bg-dark text-white">
     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/  -->
     Developed by&nbsp;<a href="https://ultof.com">ULTOF.</a>
     <a class="footerSecondA" style="color: #fff"

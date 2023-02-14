@@ -14,15 +14,20 @@
         </div>
       </div>
     </section>
+    <section>
+      <AddToDo />
+    </section>
   </div>
 </template>
 <script>
 import AdminController from "@/components/AdminController.vue";
+import AddToDo from "@/components/AddToDo.vue";
 import firebase from "../firebase/firebase";
 export default {
   name: "Home",
   components: {
     AdminController,
+    AddToDo,
   },
   data() {
     return {
