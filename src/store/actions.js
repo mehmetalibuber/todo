@@ -17,9 +17,33 @@ export const GET_USER_DATA = async (context) => {
     .then((result) => {
       let data = result.data()
       context.commit('userMutation', data)
-      console.log(data);
+      //  console.log(data);
     })
     .catch((err) => {
       alert("comingUsersData" + err);
+    });
+}
+export const ADD_TODO = async (context, payload) => {
+  var ekle = {};
+  ekle[payload.todoId] = payload;
+  await db.collection("Todos")
+    .doc(context.state.userUid)
+    .update(ekle)
+}
+export const GET_USER_TODOS = async (context) => {
+  console.log("todos data buradab ")
+
+  await db
+    .collection("Todos")
+    .doc(context.state.userUid)
+    .get()
+    .then((result) => {
+      let data = result.data()
+      console.log("todos data buradab " + Object.keys(data));
+      context.commit('userTodosMutation', data)
+
+    })
+    .catch((err) => {
+      alert("comingUserTodosData" + err);
     });
 }
