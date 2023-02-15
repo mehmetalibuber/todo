@@ -19,16 +19,13 @@ export default {
   },
 
   mounted() {
-    setTimeout(() => {
+    setInterval(() => {
       this.Todos = this.$store.getters.getUserTodos;
-    }, 1000);
+    }, 100);
+    
   },
   async created() {
     await this.$store.dispatch("GET_USER_TODOS");
-    setTimeout(async () => {
-      this.Todos = this.$store.getters.getUserTodos;
-      console.log(this.Todos);
-    }, 1000);
   },
 };
 </script>

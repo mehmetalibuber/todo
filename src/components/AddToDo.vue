@@ -36,7 +36,10 @@ export default {
           todoId,
         };
         await this.$store.dispatch("ADD_TODO", todoData);
-        await this.$store.dispatch("GET_USER_TODOS");
+        this.todo = "";
+        setTimeout(async () => {
+          await this.$store.dispatch("GET_USER_TODOS");
+        }, 1500);
       }
     },
   },
