@@ -43,3 +43,8 @@ export const GET_USER_TODOS = async (context) => {
       alert("comingUserTodosData" + err);
     });
 }
+export const DELETE_TODO = async (context, payload) => {
+  await db.collection("Todos")
+    .doc(context.state.userUid)
+    .delete(payload.todoId)
+}
