@@ -43,7 +43,7 @@ export default {
   position: absolute;
   z-index: 999;
   width: 450px;
-  height: 650px;
+  height: 100%;
   background-color: #000;
 }
 .header .fa-bars {
@@ -62,5 +62,21 @@ export default {
   top: 20px;
   right: 20px;
   cursor: pointer;
+}
+.header nav ul {
+  margin-top: calc(50%);
+  padding: 0;
+}
+.header nav ul li {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px 0;
+  text-align: center;
+}
+.header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 2em;
 }
 </style>
