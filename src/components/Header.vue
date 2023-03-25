@@ -1,49 +1,66 @@
 <template>
-  <header class="header d-flex justify-content-center">
-    <nav class="navbar navbar-expand-lg">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >HAKKIMIZDA <span class="sr-only"></span
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">İLETİŞİM</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">BLOG</a>
-          </li>
+  <div class="header">
+    <i class="fa fa-bars" @click="SHOW_NAV_MODAL"></i>
+    <header class="nav-modal" v-if="show_nav_modal == true">
+      <i class="fa fa-close" @click="HIDE_NAV_MODAL"></i>
+      <nav>
+        <ul>
+          <li><a href="">ANASAYFA</a></li>
+          <li><a href="">HAKKIMIZDA</a></li>
+          <li><a href="">BLOG</a></li>
+          <li><a href="">İLETİŞİM</a></li>
         </ul>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
+  </div>
 </template>
 <script>
 export default {
   name: "Header",
   data() {
     return {
-      path: "",
+      show_nav_modal: false,
     };
   },
   async created() {},
-  methods: {},
+  methods: {
+    SHOW_NAV_MODAL() {
+      this.show_nav_modal = true;
+      let bars = document.querySelector(".fa-bars");
+      bars.style.display = "none";
+    },
+    HIDE_NAV_MODAL() {
+      this.show_nav_modal = false;
+      let bars = document.querySelector(".fa-bars");
+      bars.style.display = "block";
+    },
+  },
 };
 </script>
 
  <style>
+.nav-modal {
+  position: absolute;
+  z-index: 999;
+  width: 450px;
+  height: 650px;
+  background-color: #000;
+}
+.header .fa-bars {
+  position: absolute;
+  color: #fff;
+  font-size: 2em;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  cursor: pointer;
+}
+.header .nav-modal .fa-close {
+  position: absolute;
+  color: #fff;
+  font-size: 2em;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
 </style>
