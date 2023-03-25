@@ -4,27 +4,30 @@ import firebase from "../firebase/firebase";
 import SignUp from "../views/SignUp.vue";
 import SignIn from "../views/SignIn.vue";
 import Home from "../views/Home.vue";
+import Profile from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 
 const routes = [{
-    path: "/",
-    name: "Home",
-    component: Home,
-    meta: {
-      requiresAuth: true,
-    },
+  path: "/",
+  name: "Home",
+  component: Home,
+}, {
+  path: "/profile",
+  name: "Profile",
+  component: Profile,
+  meta: {
+    requiresAuth: true,
   },
-  {
-    path: "/sign-up",
-    name: "SignUp",
-    component: SignUp,
-  }, {
-    path: "/sign-in",
-    name: "SignIn",
-    component: SignIn,
-  },
-];
+}, {
+  path: "/sign-up",
+  name: "SignUp",
+  component: SignUp,
+}, {
+  path: "/sign-in",
+  name: "SignIn",
+  component: SignIn,
+}, ];
 const router = new VueRouter({
   scrollBehavior() {
     return {

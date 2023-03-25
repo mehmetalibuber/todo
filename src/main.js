@@ -5,14 +5,7 @@ import axios from "axios";
 import router from "./router/index";
 import firebase from "./firebase/firebase";
 import VueEditor from "vue2-editor";
-
 Vue.use(VueEditor);
-
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
 
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;

@@ -1,39 +1,22 @@
 <template>
-  <div class="container-fluid">
-    <AdminController />
-    <section>
-      <div class="row">
-        <div class="col">
-          <div><strong> Kullanıcı Bilgileri </strong></div>
-          <div class="">
-            <p class="m-0">isim: {{ userData.name }}</p>
-          </div>
-          <div class="">
-            <p class="m-0">email: {{ userData.email }}</p>
-          </div>
-        </div>
-        <div class="col">
-          <AddToDo />
-        </div>
-      </div>
-    </section>
-    <section>
-      <DisplayTodos />
-    </section>
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>ULTOF ONLINE TO DO WEB APP</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, vero
+        ullam! Recusandae consequuntur vero laudantium repudiandae dicta
+        quisquam explicabo accusamus vitae eum iusto soluta ea minima, ipsum
+        obcaecati eaque voluptatum?
+      </p>
+      <button class="btn">Keşfet</button>
+    </div>
   </div>
 </template>
 <script>
-import AdminController from "@/components/AdminController.vue";
-import AddToDo from "@/components/AddToDo.vue";
-import DisplayTodos from "@/components/DisplayTodos.vue";
 import firebase from "../firebase/firebase";
 export default {
   name: "Home",
-  components: {
-    AdminController,
-    AddToDo,
-    DisplayTodos,
-  },
+  components: {},
   data() {
     return {
       uid: "",
@@ -51,19 +34,6 @@ export default {
     await this.GET_USER();
     await this.GET_TODOS();
   },
-  methods: {
-    async GET_USER() {
-      setTimeout(async () => {
-        let data = await this.$store.getters.getUserInfo;
-        this.userData = data;
-        //   console.log(data);
-      }, 3000);
-    },
-    async GET_TODOS() {
-      await this.$store.dispatch("GET_USER_TODOS");
-    },
-  },
+  methods: {},
 };
 </script>
-<style>
-</style>
