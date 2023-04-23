@@ -24,11 +24,16 @@ export const GET_USER_DATA = async (context) => {
     });
 }
 export const ADD_TODO = async (context, payload) => {
-  var ekle = {};
-  ekle[payload.todoId] = payload;
-  await db.collection("Todos")
-    .doc(context.state.userUid)
-    .update(ekle)
+  var todos = {};
+  todos[payload.todoId] = payload;
+  let dcm = db.collection("Todos")
+    .doc(context.state.userUid);
+  var setWithMerge = await dcm.set({
+    todos
+  }, {
+    merge: true
+  });
+  console.log(setWithMerge);
 }
 export const GET_USER_TODOS = async (context) => {
   await db
@@ -36,7 +41,8 @@ export const GET_USER_TODOS = async (context) => {
     .doc(context.state.userUid)
     .get()
     .then((result) => {
-      let data = result.data()
+      let data = result.data();
+      console.log(data);
       context.commit('userTodosMutation', data)
     })
     .catch((err) => {
@@ -44,7 +50,11 @@ export const GET_USER_TODOS = async (context) => {
     });
 }
 export const DELETE_TODO = async (context, payload) => {
-  await db.collection("Todos")
+  var sil = {};
+  sil["todos" + payload.todoId] = firebase.firebase.firestore.FieldValue.delete();
+  console.log(sil);
+  db
+    .collection("Todos")
     .doc(context.state.userUid)
-    .delete(payload.todoId)
+    .update(sil);
 }

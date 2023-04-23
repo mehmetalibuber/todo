@@ -21,7 +21,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.Todos = this.$store.getters.getUserTodos;
-    }, 100);
+    }, 1000);
     
   },
   async created() {
