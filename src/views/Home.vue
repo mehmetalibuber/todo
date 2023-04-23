@@ -3,12 +3,10 @@
     <div class="hero-text">
       <h1>ULTOF ONLINE TO DO WEB APP</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, vero
-        ullam! Recusandae consequuntur vero laudantium repudiandae dicta
-        quisquam explicabo accusamus vitae eum iusto soluta ea minima, ipsum
-        obcaecati eaque voluptatum?
+        To Do Web App uygulamamız geliştirme aşamasındadır! Bize ulaşmak için iletişim butonunu kullanabilirsiniz.
+         İlginiz için teşekkür ederiz.
       </p>
-      <button class="btn">Keşfet</button>
+      <a class="btn btn-danger border-0" href="https://ultof.com" title="ultof web sitesi">İLETİŞİME GEÇ</a>
     </div>
   </div>
 </template>

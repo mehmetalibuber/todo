@@ -1,6 +1,6 @@
 <template>
-  <div class="container text-center text-dark pt-5 mt-5 bg-primary">
-    <form class="loginForm text-center container col-md-6 mt-5 pt-5">
+  <div class="container text-center text-dark sign-up-page">
+    <form class="loginForm text-center container col-md-6">
       <div class="login mt-3">
         <input
           class="form-control"
@@ -100,4 +100,11 @@ export default {
 };
 </script>
 <style>
+.sign-up-page{
+  height: 100vh !important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

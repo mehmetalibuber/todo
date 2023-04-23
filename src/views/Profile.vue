@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid profile-page">
     <AdminController />
-    <section>
+    <section class="py-3">
       <div class="row">
         <div class="col">
           <div><strong> Kullanıcı Bilgileri </strong></div>
@@ -66,4 +66,7 @@ export default {
 };
 </script>
 <style>
+.profile-page{
+  margin-top: 1%;
+}
 </style>

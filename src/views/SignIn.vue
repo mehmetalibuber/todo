@@ -1,6 +1,6 @@
 <template>
-  <div class="container text-center text-dark pt-5 mt-5 bg-primary">
-    <form class="loginForm text-center container col-md-6 mt-5 pt-5">
+  <div class="container text-center text-dark sign-in-page">
+    <form class="loginForm text-center container col-md-6">
       <div class="login mt-2">
         <input
           class="form-control"
@@ -18,7 +18,6 @@
         />
       </div>
     </form>
-
     <div class="d-flex justify-content-center">
       <button @click="SIGN_IN" class="btn btn-danger my-5 mx-2">
         <i class="fas fa-sign-in-alt"></i>
@@ -58,12 +57,12 @@ export default {
             .auth()
             .signInWithEmailAndPassword(this.email, this.password);
           //await this.$store.dispatch("GET_USER_DATA");
-          router.replace({ name: "Home" });
+          router.replace({ name: "profile" });
         } catch (err) {
           this.showAlert("danger", "ERROR ON THE SIGN-IN");
         }
       }
-    },   
+    },
     GO_SIGN_UP() {
       router.replace({ name: "SignUp" });
     },
@@ -85,4 +84,11 @@ export default {
 };
 </script>
 <style>
+.sign-in-page{
+  height: 100vh !important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

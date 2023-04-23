@@ -5,10 +5,28 @@
       <i class="fa fa-close" @click="HIDE_NAV_MODAL"></i>
       <nav>
         <ul>
-          <li><a href="">ANASAYFA</a></li>
-          <li><a href="">HAKKIMIZDA</a></li>
-          <li><a href="">BLOG</a></li>
-          <li><a href="">İLETİŞİM</a></li>
+          <li><a href="/" title="anasayfa">ANASAYFA</a></li>
+          <li>
+            <a
+              href="https://ultof.com/hakkimizda"
+              target="_blank"
+              title="hakkımızda"
+              >HAKKIMIZDA</a
+            >
+          </li>
+          <li>
+            <a href="https://blog.ultof.com/" target="_blank" title="blog"
+              >BLOG</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://ultof.com/iletisim"
+              target="_blank"
+              title="iletişim"
+              >İLETİŞİM</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -42,13 +60,18 @@ export default {
 .nav-modal {
   position: absolute;
   z-index: 999;
+  top: 0;
   width: 450px;
   height: 100%;
   background-color: #000;
 }
+
 .header .fa-bars {
   position: absolute;
-  color: #fff;
+  color: #000;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 50%;
   font-size: 2em;
   top: 20px;
   left: 20px;
